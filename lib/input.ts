@@ -30,9 +30,16 @@ export class InputProvider {
         return line.replace("\r", "");
 
     }
+    public setText(text: string) {
+        this.lines = text.split("\n");
+    }
 
     public hasNext(): boolean {
         return this.read < this.lines.length;
+    }
+    
+    public getLines(): string[] {
+        return this.lines;
     }
 
 }
