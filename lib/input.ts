@@ -17,7 +17,8 @@ export class InputProvider {
                 "Cookie": `session=${this.token}`
             }
         });
-        const text = await response.text();
+        let text = await response.text();
+        text = text.trim()
         this.lines = text.split("\n");
     }
 
